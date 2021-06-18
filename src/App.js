@@ -2,8 +2,8 @@ import { palabras } from "./datos/palabras";
 function App() {
   return (
     <>
-      <section class="palabras">
-        <ul class="lista-palabras">
+      <section className="palabras">
+        <ul className="lista-palabras">
           <li>me</li>
           <li data-lenguaje="si">JavaScript</li>
           <li>el</li>
@@ -29,14 +29,14 @@ function App() {
           <li>los</li>
           <li>perros</li>
         </ul>
-        <ul class="resultado"></ul>
+        <ul className="resultado"></ul>
       </section>
-      <section class="crear-palabras">
-        <form class="form-palabras">
-          <div class="form-grupo">
+      <section className="crear-palabras">
+        <form className="form-palabras">
+          <div className="form-grupo">
             <input type="text" placeholder="Nueva palabra" required />
           </div>
-          <div class="form-grupo">
+          <div className="form-grupo">
             <select required>
               <option value="">Máximo de veces</option>
               <option value="0">Sin límite</option>
@@ -45,19 +45,19 @@ function App() {
               <option value="3">3 veces</option>
             </select>
           </div>
-          <div class="form-grupo">
+          <div className="form-grupo">
             <label>
               <input type="checkbox" /> Es un lenguaje de programación
             </label>
           </div>
-          <div class="form-grupo">
+          <div className="form-grupo">
             <button type="submit" disabled>
               Crear
             </button>
           </div>
         </form>
       </section>
-      <section class="info">
+      <section className="info">
         <ul>
           <li>
             Nº de palabras <span>15</span>
