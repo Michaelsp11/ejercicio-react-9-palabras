@@ -1,5 +1,11 @@
 export const Palabra = (props) => {
-  const { palabra, resultado, setResultado } = props;
+  const {
+    palabra,
+    resultado,
+    setResultado,
+    numeroPalabras,
+    setNumeroPalabras,
+  } = props;
   const { texto } = palabra;
   const agregarPalabra = () => {
     setResultado([
@@ -12,6 +18,7 @@ export const Palabra = (props) => {
             : texto,
       },
     ]);
+    setNumeroPalabras(numeroPalabras + 1);
   };
   return <li onClick={agregarPalabra}>{texto}</li>;
 };

@@ -1,8 +1,9 @@
 export const Info = (props) => {
+  const { numeroPalabras } = props;
   return (
     <ul>
       <li>
-        Nº de palabras <span>15</span>
+        Nº de palabras <span>{numeroPalabras}</span>
       </li>
       <li>
         Nº de caracteres <span>74</span>

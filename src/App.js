@@ -7,6 +7,7 @@ import { palabras as palabrasAPI } from "./datos/palabras";
 function App() {
   const [palabras, setPalabras] = useState([...palabrasAPI]);
   const [resultado, setResultado] = useState([]);
+  const [numeroPalabras, setNumeroPalabras] = useState(0);
   return (
     <>
       <section className="palabras">
@@ -17,6 +18,8 @@ function App() {
               palabra={palabra}
               resultado={resultado}
               setResultado={setResultado}
+              numeroPalabras={numeroPalabras}
+              setNumeroPalabras={setNumeroPalabras}
             />
           ))}
         </ul>
@@ -27,6 +30,8 @@ function App() {
               palabra={palabra}
               resultado={resultado}
               setResultado={setResultado}
+              numeroPalabras={numeroPalabras}
+              setNumeroPalabras={setNumeroPalabras}
             />
           ))}
         </ul>
@@ -35,7 +40,7 @@ function App() {
         <Formulario />
       </section>
       <section className="info">
-        <Info />
+        <Info numeroPalabras={numeroPalabras} />
       </section>
     </>
   );
