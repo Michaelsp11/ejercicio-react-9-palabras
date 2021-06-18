@@ -1,5 +1,5 @@
 export const Info = (props) => {
-  const { numeroPalabras, numeroCaracteres } = props;
+  const { numeroPalabras, numeroCaracteres, longitudMediaPalabras } = props;
   return (
     <ul>
       <li>
@@ -9,7 +9,7 @@ export const Info = (props) => {
         Nº de caracteres <span>{numeroCaracteres}</span>
       </li>
       <li>
-        Longitud media <span>5.32</span>
+        Longitud media <span>{longitudMediaPalabras}</span>
       </li>
       <li>
         Contiene 2 lenguaje/s de programación

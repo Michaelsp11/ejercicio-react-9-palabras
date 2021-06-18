@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Formulario } from "./componentes/Formulario";
 import { Info } from "./componentes/Info";
 import { Palabra } from "./componentes/Palabra";
@@ -9,6 +9,18 @@ function App() {
   const [resultado, setResultado] = useState([]);
   const [numeroPalabras, setNumeroPalabras] = useState(0);
   const [numeroCaracteres, setNumeroCaracteres] = useState(0);
+  const [longitudMediaPalabras, setLongitudMediaPalabras] = useState(0);
+  useEffect(
+    () =>
+      setLongitudMediaPalabras(
+        resultado.reduce(
+          (acumulador, { texto }) =>
+            acumulador + texto.split("").length / resultado.length,
+          0
+        )
+      ),
+    [resultado]
+  );
   return (
     <>
       <section className="palabras">
@@ -48,6 +60,7 @@ function App() {
         <Info
           numeroPalabras={numeroPalabras}
           numeroCaracteres={numeroCaracteres}
+          longitudMediaPalabras={longitudMediaPalabras}
         />
       </section>
     </>
