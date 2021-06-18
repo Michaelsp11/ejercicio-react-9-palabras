@@ -1,5 +1,5 @@
+import PropTypes from "prop-types";
 import { Lenguaje } from "./Lenguaje";
-
 export const Info = (props) => {
   const {
     numeroPalabras,
@@ -28,4 +28,10 @@ export const Info = (props) => {
       </li>
     </ul>
   );
+};
+Info.propTypes = {
+  numeroPalabras: PropTypes.number.isRequired,
+  numeroCaracteres: PropTypes.number.isRequired,
+  longitudMediaPalabras: PropTypes.number.isRequired,
+  listaLenguajes: PropTypes.array.isRequired,
 };

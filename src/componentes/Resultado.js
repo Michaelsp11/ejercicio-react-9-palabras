@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+import { datosPalabraSchema } from "../schemas/datosSchemas";
 export const Resultado = (props) => {
   const {
     palabra,
@@ -16,4 +18,13 @@ export const Resultado = (props) => {
     setNumeroCaracteres(numeroCaracteres - palabra.texto.split("").length);
   };
   return <li onClick={quitarPalabra}>{palabra.texto}</li>;
+};
+Resultado.propTypes = {
+  palabra: datosPalabraSchema,
+  resultado: PropTypes.array.isRequired,
+  numeroPalabras: PropTypes.number.isRequired,
+  numeroCaracteres: PropTypes.number.isRequired,
+  setResultado: PropTypes.func.isRequired,
+  setNumeroPalabras: PropTypes.func.isRequired,
+  setNumeroCaracteres: PropTypes.func.isRequired,
 };
