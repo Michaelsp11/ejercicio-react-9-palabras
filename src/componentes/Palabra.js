@@ -5,6 +5,8 @@ export const Palabra = (props) => {
     setResultado,
     numeroPalabras,
     setNumeroPalabras,
+    numeroCaracteres,
+    setNumeroCaracteres,
   } = props;
   const { texto } = palabra;
   const agregarPalabra = () => {
@@ -19,6 +21,7 @@ export const Palabra = (props) => {
       },
     ]);
     setNumeroPalabras(numeroPalabras + 1);
+    setNumeroCaracteres(numeroCaracteres + texto.split("").length);
   };
   return <li onClick={agregarPalabra}>{texto}</li>;
 };

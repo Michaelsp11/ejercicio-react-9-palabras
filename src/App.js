@@ -8,6 +8,7 @@ function App() {
   const [palabras, setPalabras] = useState([...palabrasAPI]);
   const [resultado, setResultado] = useState([]);
   const [numeroPalabras, setNumeroPalabras] = useState(0);
+  const [numeroCaracteres, setNumeroCaracteres] = useState(0);
   return (
     <>
       <section className="palabras">
@@ -20,6 +21,8 @@ function App() {
               setResultado={setResultado}
               numeroPalabras={numeroPalabras}
               setNumeroPalabras={setNumeroPalabras}
+              numeroCaracteres={numeroCaracteres}
+              setNumeroCaracteres={setNumeroCaracteres}
             />
           ))}
         </ul>
@@ -32,6 +35,8 @@ function App() {
               setResultado={setResultado}
               numeroPalabras={numeroPalabras}
               setNumeroPalabras={setNumeroPalabras}
+              numeroCaracteres={numeroCaracteres}
+              setNumeroCaracteres={setNumeroCaracteres}
             />
           ))}
         </ul>
@@ -40,7 +45,10 @@ function App() {
         <Formulario />
       </section>
       <section className="info">
-        <Info numeroPalabras={numeroPalabras} />
+        <Info
+          numeroPalabras={numeroPalabras}
+          numeroCaracteres={numeroCaracteres}
+        />
       </section>
     </>
   );
