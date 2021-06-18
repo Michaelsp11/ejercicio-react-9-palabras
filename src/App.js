@@ -11,18 +11,23 @@ function App() {
     <>
       <section className="palabras">
         <ul className="lista-palabras">
-          {palabras.map(({ id, texto }) => (
+          {palabras.map((palabra) => (
             <Palabra
-              key={id}
-              texto={texto}
+              key={palabra.id}
+              palabra={palabra}
               resultado={resultado}
               setResultado={setResultado}
             />
           ))}
         </ul>
         <ul className="resultado">
-          {resultado.map((palabra, i) => (
-            <Resultado key={i} palabra={palabra} />
+          {resultado.map((palabra) => (
+            <Resultado
+              key={palabra.id}
+              palabra={palabra}
+              resultado={resultado}
+              setResultado={setResultado}
+            />
           ))}
         </ul>
       </section>
