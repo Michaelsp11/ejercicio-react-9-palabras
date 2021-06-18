@@ -1,5 +1,12 @@
+import { Lenguaje } from "./Lenguaje";
+
 export const Info = (props) => {
-  const { numeroPalabras, numeroCaracteres, longitudMediaPalabras } = props;
+  const {
+    numeroPalabras,
+    numeroCaracteres,
+    longitudMediaPalabras,
+    listaLenguajes,
+  } = props;
   return (
     <ul>
       <li>
@@ -12,10 +19,11 @@ export const Info = (props) => {
         Longitud media <span>{longitudMediaPalabras}</span>
       </li>
       <li>
-        Contiene 2 lenguaje/s de programación
+        Contiene {listaLenguajes.length} lenguaje/s de programación
         <ul>
-          <li>JavaScript</li>
-          <li>Java</li>
+          {listaLenguajes.map((lenguaje, i) => (
+            <Lenguaje key={i} lenguaje={lenguaje.texto} />
+          ))}
         </ul>
       </li>
     </ul>

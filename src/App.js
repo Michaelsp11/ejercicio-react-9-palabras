@@ -10,17 +10,17 @@ function App() {
   const [numeroPalabras, setNumeroPalabras] = useState(0);
   const [numeroCaracteres, setNumeroCaracteres] = useState(0);
   const [longitudMediaPalabras, setLongitudMediaPalabras] = useState(0);
-  useEffect(
-    () =>
-      setLongitudMediaPalabras(
-        resultado.reduce(
-          (acumulador, { texto }) =>
-            acumulador + texto.split("").length / resultado.length,
-          0
-        )
-      ),
-    [resultado]
-  );
+  const [listaLenguajes, setListaLenguajes] = useState([]);
+  useEffect(() => {
+    setLongitudMediaPalabras(
+      resultado.reduce(
+        (acumulador, { texto }) =>
+          acumulador + texto.split("").length / resultado.length,
+        0
+      )
+    );
+    setListaLenguajes(palabras.filter(({ isLenguaje }) => isLenguaje).sort());
+  }, [resultado, palabras]);
   return (
     <>
       <section className="palabras">
@@ -61,6 +61,7 @@ function App() {
           numeroPalabras={numeroPalabras}
           numeroCaracteres={numeroCaracteres}
           longitudMediaPalabras={longitudMediaPalabras}
+          listaLenguajes={listaLenguajes}
         />
       </section>
     </>
